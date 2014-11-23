@@ -13,17 +13,18 @@ var Reacticon = require('./reacticon');
 
 // CSS
 require('../../styles/normalize.css');
-require('../../styles/main.css');
+require('../../styles/application.scss');
+require('../../styles/reacticons.scss');
 
 var ReacticonsApp = React.createClass({
   render: function() {
     return (
       <div>
         <Reacticon
-          iconWidth="100"
-          iconHeight="100"
-          backgroundColor="#ccc"
-          flapColor="#999" />
+          width="100"
+          height="100"
+          type="document"
+          label="doc" />
       </div>
     );
   }
