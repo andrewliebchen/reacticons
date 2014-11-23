@@ -23,7 +23,7 @@ var ReacticonsApp = React.createClass({
         <Reacticon
           width="100"
           height="100"
-          type="document"
+          type="image"
           label="doc" />
       </div>
     );
