@@ -26,7 +26,8 @@ var ReacticonsApp = React.createClass({
           label="doc" />
         <Reacticon
           height="100"
-          type="table" />
+          type="table"
+          primaryColor="#2ECC40" />
         <Reacticon
           height="100"
           type="image"
