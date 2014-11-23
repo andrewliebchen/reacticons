@@ -6,14 +6,17 @@
 
 var React = require('react/addons');
 
-var IconBackground = React.createClass({
+var Reacticon = React.createClass({
   render: function() {
+    var reacticonWidth = this.props.iconWidth ? this.props.iconWidth : this.props.iconHeight * 0.75;
+    var reacticonHeight = this.props.iconHeight ? this.props.iconHeight : this.props.iconWidth * 1.33;
+
     return (
       <div>
         <svg version="1.1"
-          width="30px"
-          height="40px"
-          viewBox="0 0 30 40" >
+          width={reacticonWidth + 'px'}
+          height={reacticonHeight + 'px'}
+          viewBox="0 0 30 40">
           {this.renderGraphic()}
         </svg>
       </div>
@@ -34,5 +37,5 @@ var IconBackground = React.createClass({
   }
 });
 
-module.exports = IconBackground;
+module.exports = Reacticon;
 

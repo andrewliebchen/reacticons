@@ -6,7 +6,7 @@
 
 var React = require('react/addons');
 
-var IconBackground = require('./icon_background');
+var Reacticon = require('./reacticon');
 
 // Export React so the devtools can find it
 (window !== window.top ? window.top : window).React = React;
@@ -19,7 +19,8 @@ var ReacticonsApp = React.createClass({
   render: function() {
     return (
       <div>
-        <IconBackground />
+        <Reacticon
+          iconWidth="100" />
       </div>
     );
   }
