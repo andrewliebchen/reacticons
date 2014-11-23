@@ -5,13 +5,13 @@
 'use strict';
 
 var React = require('react/addons');
+var Chromath = require('chromath');
 
 var Reacticon = React.createClass({
   getDefaultProps: function() {
     return {
       colorForeground: "#666",
-      colorBackground: "#ccc",
-      colorFlap: "#999"
+      colorBackground: "#ccc"
     };
   },
 
@@ -19,9 +19,10 @@ var Reacticon = React.createClass({
     var width = this.props.width || this.props.height * 0.75;
     var height = this.props.height || this.props.width * 1.33;
     var fontSize = height * 0.2;
+    var colorFlap = new Chromath(this.props.colorBackground).shade(0.2).toHexString();
 
     return (
-      <div className="reacticon" style={{fontSize: fontSize, color: this.props.colorForeground}}>
+      <div className="reacticon" style={{fontSize: fontSize, color: colorFlap}}>
         <svg version="1.1"
           width={width + 'px'}
           height={height + 'px'}
@@ -30,7 +31,7 @@ var Reacticon = React.createClass({
             this.props.type,
             this.props.colorForeground,
             this.props.colorBackground,
-            this.props.colorFlap
+            colorFlap
           )}
         </svg>
         {this.props.label ? <span className="reacticon__label">{this.props.label}</span> : null}
