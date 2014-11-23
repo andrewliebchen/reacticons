@@ -20,7 +20,10 @@ var ReacticonsApp = React.createClass({
     return (
       <div>
         <Reacticon
-          iconWidth="100" />
+          iconWidth="100"
+          iconHeight="100"
+          backgroundColor="#ccc"
+          flapColor="#999" />
       </div>
     );
   }
