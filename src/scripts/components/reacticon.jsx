@@ -18,20 +18,23 @@ var Reacticon = React.createClass({
   render: function() {
     var width = this.props.width || this.props.height * 0.75;
     var height = this.props.height || this.props.width * 1.33;
+    var fontSize = height * 0.2;
 
     return (
-      <svg className="reacticon"
-        version="1.1"
-        width={width + 'px'}
-        height={height + 'px'}
-        viewBox="0 0 30 40">
-        {this.renderGraphic(
-          this.props.type,
-          this.props.colorForeground,
-          this.props.colorBackground,
-          this.props.colorFlap
-        )}
-      </svg>
+      <div className="reacticon" style={{fontSize: fontSize, color: this.props.colorForeground}}>
+        <svg version="1.1"
+          width={width + 'px'}
+          height={height + 'px'}
+          viewBox="0 0 30 40">
+          {this.renderGraphic(
+            this.props.type,
+            this.props.colorForeground,
+            this.props.colorBackground,
+            this.props.colorFlap
+          )}
+        </svg>
+        {this.props.label ? <span className="reacticon__label">{this.props.label}</span> : null}
+      </div>
     );
   },
 

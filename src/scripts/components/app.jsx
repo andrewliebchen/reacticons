@@ -21,10 +21,16 @@ var ReacticonsApp = React.createClass({
     return (
       <div>
         <Reacticon
-          width="100"
+          height="300"
+          type="document"
+          label="doc" />
+        <Reacticon
+          height="100"
+          type="table" />
+        <Reacticon
           height="100"
           type="image"
-          label="doc" />
+          label="png" />
       </div>
     );
   }
