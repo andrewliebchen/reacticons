@@ -1,3 +1,4 @@
+$progressHeight: 0.5em;
 $progressHatchAngle: -45deg;
 $progressHatchSpeed: 1s;
 $progressHatchColor: rgba(white, 0.5);
@@ -25,8 +26,13 @@ $progressHatchSize: 1em;
 
 }
 
-.reacticon__file_flap {
+.reacticon__file__flap {
+  transition: all 0.5s ease-in;
+  transform-origin: 100% 100%;
 
+  .animate-flap & {
+    transform: rotate3d(1, 1, 0, 180deg);
+  }
 }
 
 .reacticon__label {
@@ -44,10 +50,9 @@ $progressHatchSize: 1em;
 .reacticon__progress {
   $width: 60%;
   $margin: -($width / 2);
-  $height: 0.5em;
-  border-radius: $height / 2;
+  border-radius: $progressHeight / 2;
   bottom: 0.9em;
-  height: $height;
+  height: $progressHeight;
   left: 50%;
   margin: 0 0 0 $margin;
   overflow: hidden;
