@@ -21,8 +21,8 @@ var ReacticonsApp = React.createClass({
     return (
       <div>
         <Reacticon
-          height="300"
-          type="document"
+          height="100"
+          type="text"
           label="doc" />
         <Reacticon
           height="100"
@@ -32,6 +32,15 @@ var ReacticonsApp = React.createClass({
           height="100"
           type="image"
           label="png" />
+        <Reacticon
+          height="100"
+          type="code"
+          label="html" />
+        <Reacticon
+          height="100"
+          type="slides"
+          label="ppt"
+          primaryColor="#FF4136" />
       </div>
     );
   }

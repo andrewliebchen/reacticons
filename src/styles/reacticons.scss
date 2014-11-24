@@ -16,6 +16,7 @@
 }
 
 %reacticon__type {
+
 }
 
 .reacticon__type_document {
@@ -30,12 +31,16 @@
   @extend %reacticon__type;
 }
 
+.reacticon__type_code {
+  @extend %reacticon__type;
+}
+
 .reacticon__label {
   display: inline-block;
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0.5em;
+  bottom: 0.6em;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
