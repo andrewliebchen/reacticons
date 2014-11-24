@@ -36,13 +36,14 @@ var Reacticon = React.createClass({
     var primaryColorDark   = new Chromath(this.props.primaryColor).shade(0.2).toHexString();
     var bgColorDark        = new Chromath(this.props.bgColor).shade(0.2).toHexString();
 
+    var reacticonClassName = "reacticon reacticon_" + this.props.type;
     var reacticonStyle = {
       fontSize: fontSize,
       color: bgColorDark
     }
 
     return (
-      <div className="reacticon" style={reacticonStyle}>
+      <div className={reacticonClassName} style={reacticonStyle}>
         <svg version="1.1"
           width={width + 'px'}
           height={height + 'px'}
@@ -74,7 +75,7 @@ var Reacticon = React.createClass({
           </g>
         </g>
         {type === 'text' ?
-          <g className="reacticon__type_text">
+          <g className="reacticon__type">
             <g>
               <path fill={primaryColor} d="M23.5,13h-10c-0.3,0-0.5,0.2-0.5,0.5v1c0,0.3,0.2,0.5,0.5,0.5h10c0.3,0,0.5-0.2,0.5-0.5v-1C24,13.2,23.8,13,23.5,13z"/>
               <path fill={primaryColor} d="M23.5,17h-10c-0.3,0-0.5,0.2-0.5,0.5v1c0,0.3,0.2,0.5,0.5,0.5h10c0.3,0,0.5-0.2,0.5-0.5v-1C24,17.2,23.8,17,23.5,17z"/>
@@ -90,7 +91,7 @@ var Reacticon = React.createClass({
           </g>
         : null }
         {type === 'table' ?
-          <g className="reacticon__type_table">
+          <g className="reacticon__type">
             <path fill={primaryColorDark} d="M24,15v-1c0-0.6-0.4-1-1-1H7c-0.6,0-1,0.4-1,1v1H24z"/>
             <rect fill={primaryColorLight} x="6" y="15" width="18" height="2"/>
             <rect fill={primaryColorMid} x="6" y="17" width="18" height="2"/>
@@ -101,7 +102,7 @@ var Reacticon = React.createClass({
           </g>
         : null}
         {type === 'image' ?
-          <g className="reacticon__type_image">
+          <g className="reacticon__type">
             <path fill={primaryColorLight} d="M23,13H7c-0.6,0-1,0.4-1,1v12c0,0.6,0.4,1,1,1h16c0.6,0,1-0.4,1-1V14C24,13.4,23.6,13,23,13L23,13z"/>
             <path fill={primaryColorDark} d="M7.1,27l15.3,0l-7.5-7.5c-0.3-0.3-0.8-0.5-1.2-0.5c-0.4,0-0.9,0.2-1.2,0.5L6,25.9V26C6,26.6,6.5,27,7.1,27z"/>
             <path fill={primaryColor} d="M24,19l-1.1-1c-0.4-0.4-1-0.6-1.5-0.6c-0.5,0-1.1,0.2-1.5,0.6l-9.1,9H23c0.6,0,1-0.4,1-1V19z"/>
@@ -109,7 +110,7 @@ var Reacticon = React.createClass({
           </g>
         : null}
         {type === 'code' ?
-          <g className="reacticon__type_code">
+          <g className="reacticon__type">
             <path fill={primaryColorDark} d="M9,26V14v-1H7c-0.6,0-1,0.4-1,1v12c0,0.6,0.4,1,1,1h2V26z"/>
             <g>
               <path fill={primaryColorLight} d="M24,15H9v-2h14c0.6,0,1,0.4,1,1V15z"/>
@@ -129,7 +130,7 @@ var Reacticon = React.createClass({
           </g>
         : null}
         {type === 'slides' ?
-          <g className="reacticon__type_slides">
+          <g className="reacticon__type">
             <path fill={primaryColorDark} d="M23,13H7c-0.6,0-1,0.4-1,1v12c0,0.6,0.4,1,1,1h16c0.6,0,1-0.4,1-1V14C24,13.4,23.6,13,23,13L23,13z"/>
             <g>
               <path fill={primaryColorMid} d="M14.9,16.1c-2.5,0-4.4,2-4.4,4.4c0,2.5,2,4.4,4.4,4.4s4.4-2,4.4-4.4h-4.4V16.1z"/>

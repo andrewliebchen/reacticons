@@ -15,26 +15,6 @@
 
 }
 
-%reacticon__type {
-
-}
-
-.reacticon__type_document {
-  @extend %reacticon__type;
-}
-
-.reacticon__type_table {
-  @extend %reacticon__type;
-}
-
-.reacticon__type_image {
-  @extend %reacticon__type;
-}
-
-.reacticon__type_code {
-  @extend %reacticon__type;
-}
-
 .reacticon__label {
   display: inline-block;
   position: absolute;
