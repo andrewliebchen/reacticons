@@ -27,11 +27,9 @@ $progressHatchSize: 1em;
 }
 
 .reacticon__file__flap {
-  transition: all 0.5s ease-in;
-  transform-origin: 100% 100%;
-
   .animate-flap & {
-    transform: rotate3d(1, 1, 0, 180deg);
+    // transform: $flapAnimationStart;
+    // transform-origin: 100% 100%;
   }
 }
 
@@ -69,6 +67,21 @@ $progressHatchSize: 1em;
     background-image: linear-gradient($progressHatchAngle, $progressHatchColor 25%, transparent 25%, transparent 50%, $progressHatchColor 50%, $progressHatchColor 75%, transparent 75%, transparent);
     background-size: $progressHatchSize $progressHatchSize;
     width: 100%;
+  }
+}
+
+// Animations
+.reacticon-enter {
+  &.animate-flap .reacticon__file__flap {
+    transform: rotate3d(1, 1, 0, 180deg);
+    transition: all 0.8s ease-in;
+    transform-origin: 100% 100%;
+  }
+}
+
+.reacticon-enter.reacticon-enter-active {
+  &.animate-flap .reacticon__file__flap {
+    transform: rotate3d(0, 0, 0, 180deg);
   }
 }
 

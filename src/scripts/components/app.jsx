@@ -5,6 +5,7 @@
 'use strict';
 
 var React = require('react/addons');
+var CSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var Reacticon = require('./reacticon');
 
@@ -17,32 +18,57 @@ require('../../styles/application.scss');
 require('../../styles/reacticons.scss');
 
 var ReacticonsApp = React.createClass({
+  getInitialState: function() {
+      return { showAnimateFlap: false };
+  },
+  onClick: function() {
+      this.setState({ showAnimateFlap: true });
+  },
   render: function() {
     return (
       <div>
-        <Reacticon
-          height="100"
-          type="text"
-          label="doc"
-          progress="50%" />
-        <Reacticon
-          height="100"
-          type="table"
-          primaryColor="#2ECC40"
-          isProcessing />
-        <Reacticon
-          height="100"
-          type="image"
-          label="png" />
-        <Reacticon
-          height="100"
-          type="code"
-          label="html" />
-        <Reacticon
-          height="100"
-          type="slides"
-          label="ppt"
-          primaryColor="#FF4136" />
+        <CSSTransitionGroup transitionName="reacticon">
+          <Reacticon
+            key="1"
+            height="100"
+            type="text"
+            label="doc"
+            progress="50%" />
+          <Reacticon
+            key="2"
+            height="100"
+            type="table"
+            primaryColor="#2ECC40"
+            isProcessing />
+          <Reacticon
+            key="3"
+            height="100"
+            type="image"
+            label="png" />
+          <Reacticon
+            key="4"
+            height="100"
+            type="code"
+            label="html" />
+          <Reacticon
+            key="5"
+            height="100"
+            type="slides"
+            label="ppt"
+            primaryColor="#FF4136" />
+          { this.state.showAnimateFlap ?
+            <Reacticon
+              key="6"
+              height="100"
+              type="slides"
+              label="ppt"
+              primaryColor="#FF4136"
+              animateFlap />
+          : null}
+        </CSSTransitionGroup>
+        <div>
+          <button onClick={this.onClick}>Animate corner flap</button>
+        </div>
       </div>
     );
   }
