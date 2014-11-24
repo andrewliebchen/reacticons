@@ -7,16 +7,20 @@
 var React = require('react/addons');
 var Chromath = require('chromath');
 
-// NEED BETTER VARIABLE NAMES?
-// bgColor
-// secondaryColorLight
-// secondaryColorDark
-// primaryColor
-// primaryColorLight
-// primaryColorMid
-// primaryColorDark
 
 var Reacticon = React.createClass({
+  propTypes: {
+    width:        React.PropTypes.string,
+    height:       React.PropTypes.string,
+    type:         React.PropTypes.oneOf(['text', 'table', 'image', 'code', 'slides']).isRequired,
+    label:        React.PropTypes.string,
+    bgColor:      React.PropTypes.string,
+    primaryColor: React.PropTypes.string,
+    animateFlap:  React.PropTypes.bool,
+    progress:     React.PropTypes.string,
+    isProcessing: React.PropTypes.bool
+  },
+
   getDefaultProps: function() {
     return {
       primaryColor: "#0074d9",
@@ -51,8 +55,8 @@ var Reacticon = React.createClass({
     });
 
     // Styles
-    var reacticonStyle = {color: bgColorDark, fontSize: fontSize};
-    var progressStyle = {backgroundColor: bgColorDark};
+    var reacticonStyle    = {color: bgColorDark, fontSize: fontSize};
+    var progressStyle     = {backgroundColor: bgColorDark};
     var progressFillStyle = {backgroundColor: this.props.primaryColor, width: this.props.progress};
 
     return (
@@ -82,11 +86,7 @@ var Reacticon = React.createClass({
             <path fill={this.props.bgColor} d="M28,40H2c-1.1,0-2-0.9-2-2V2c0-1.1,0.9-2,2-2h18l10,10v28C30,39.1,29.1,40,28,40z"/>
           </g>
           <g className="reacticon__file__flap">
-            {this.props.animateFlap ?
-              <path fill={bgColorDark} d="M20,0l8,0c1.1,0,2,0.9,2,2v8L20,0z"/>
-            :
-              <path fill={bgColorDark} d="M30,10h-8c-1.1,0-2-0.9-2-2V0L30,10z"/>
-            }
+            <path fill={bgColorDark} d={this.props.animateFlap ? "M20,0l8,0c1.1,0,2,0.9,2,2v8L20,0z" : "M30,10h-8c-1.1,0-2-0.9-2-2V0L30,10z" }/>
           </g>
         </g>
         {this.props.type === 'text' ?
