@@ -43,7 +43,7 @@ module.exports = {
       loader: 'react-hot!jsx-loader?harmony'
     }, {
       test: /\.scss/,
-      loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
+      loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader?outputStyle=expanded'
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader!autoprefixer-loader'

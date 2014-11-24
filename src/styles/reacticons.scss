@@ -1,3 +1,17 @@
+$progressHatchAngle: -45deg;
+$progressHatchSpeed: 1s;
+$progressHatchColor: rgba(white, 0.5);
+$progressHatchSize: 1em;
+
+@keyframes progress {
+  0% {
+    background-position: $progressHatchSize 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
 .reacticon {
   position: relative;
   display: inline-block;
@@ -16,14 +30,40 @@
 }
 
 .reacticon__label {
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  right: 0;
   bottom: 0.6em;
+  display: inline-block;
+  font-weight: bold;
+  left: 0;
+  line-height: 1;
+  position: absolute;
+  right: 0;
   text-align: center;
   text-transform: uppercase;
-  font-weight: bold;
-  line-height: 1;
+}
+
+.reacticon__progress {
+  $width: 60%;
+  $margin: -($width / 2);
+  $height: 0.5em;
+  border-radius: $height / 2;
+  bottom: 0.9em;
+  height: $height;
+  left: 50%;
+  margin: 0 0 0 $margin;
+  overflow: hidden;
+  position: absolute;
+  width: $width;
+}
+
+.reacticon__progress__fill {
+  border-radius: inherit;
+  height: inherit;
+
+  .is-processing & {
+    animation: progress $progressHatchSpeed linear infinite;
+    background-image: linear-gradient($progressHatchAngle, $progressHatchColor 25%, transparent 25%, transparent 50%, $progressHatchColor 50%, $progressHatchColor 75%, transparent 75%, transparent);
+    background-size: $progressHatchSize $progressHatchSize;
+    width: 100%;
+  }
 }
 

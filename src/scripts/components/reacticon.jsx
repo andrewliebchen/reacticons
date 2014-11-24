@@ -25,6 +25,8 @@ var Reacticon = React.createClass({
   },
 
   render: function() {
+    var cx = React.addons.classSet;
+
     // Sizes
     var width    = this.props.width || this.props.height * 0.75;
     var height   = this.props.height || this.props.width * 1.33;
@@ -36,11 +38,17 @@ var Reacticon = React.createClass({
     var primaryColorDark   = new Chromath(this.props.primaryColor).shade(0.2).toHexString();
     var bgColorDark        = new Chromath(this.props.bgColor).shade(0.2).toHexString();
 
+    // ClassNames
     var reacticonClassName = "reacticon reacticon_" + this.props.type;
-    var reacticonStyle = {
-      fontSize: fontSize,
-      color: bgColorDark
-    }
+    var progressClassName  = cx({
+      "reacticon__progress": true,
+      "is-processing": this.props.isProcessing
+    });
+
+    // Styles
+    var reacticonStyle = {color: bgColorDark, fontSize: fontSize};
+    var progressStyle = {backgroundColor: bgColorDark};
+    var progressFillStyle = {backgroundColor: this.props.primaryColor, width: this.props.progress};
 
     return (
       <div className={reacticonClassName} style={reacticonStyle}>
@@ -58,7 +66,13 @@ var Reacticon = React.createClass({
             bgColorDark
           )}
         </svg>
-        {this.props.label ? <span className="reacticon__label">{this.props.label}</span> : null}
+        {this.props.progress || this.props.isProcessing ?
+          <div className={progressClassName} style={progressStyle}>
+            <div className="reacticon__progress__fill" style={progressFillStyle} />
+          </div>
+        :
+          this.props.label ? <span className="reacticon__label">{this.props.label}</span> : null
+        }
       </div>
     );
   },

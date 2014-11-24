@@ -23,11 +23,13 @@ var ReacticonsApp = React.createClass({
         <Reacticon
           height="100"
           type="text"
-          label="doc" />
+          label="doc"
+          progress="50%" />
         <Reacticon
           height="100"
           type="table"
-          primaryColor="#2ECC40" />
+          primaryColor="#2ECC40"
+          isProcessing />
         <Reacticon
           height="100"
           type="image"
