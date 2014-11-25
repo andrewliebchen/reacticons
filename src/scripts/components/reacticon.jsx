@@ -107,13 +107,13 @@ var Reacticon = React.createClass({
         : null }
         {this.props.type === 'table' ?
           <g className="reacticon__type">
-            <path fill={primaryColorDark} d="M24,15v-1c0-0.6-0.4-1-1-1H7c-0.6,0-1,0.4-1,1v1H24z"/>
-            <rect fill={primaryColorLight} x="6" y="15" width="18" height="2"/>
-            <rect fill={primaryColorMid} x="6" y="17" width="18" height="2"/>
-            <rect fill={primaryColorLight} x="6" y="19" width="18" height="2"/>
-            <rect fill={primaryColorMid} x="6" y="21" width="18" height="2"/>
-            <rect fill={primaryColorLight} x="6" y="23" width="18" height="2"/>
-            <path fill={primaryColorMid} d="M23,27H7c-0.6,0-1-0.4-1-1v-1h18v1C24,26.6,23.6,27,23,27z"/>
+            <path fill={primaryColorDark} className="reacticon__table_header" d="M24,15v-1c0-0.6-0.4-1-1-1H7c-0.6,0-1,0.4-1,1v1H24z"/>
+            <rect fill={primaryColorLight} className="reacticon__table_row-1" x="6" y="15" width="18" height="2"/>
+            <rect fill={primaryColorMid} className="reacticon__table_row-2" x="6" y="17" width="18" height="2"/>
+            <rect fill={primaryColorLight} className="reacticon__table_row-3" x="6" y="19" width="18" height="2"/>
+            <rect fill={primaryColorMid} className="reacticon__table_row-4" x="6" y="21" width="18" height="2"/>
+            <rect fill={primaryColorLight} className="reacticon__table_row-5" x="6" y="23" width="18" height="2"/>
+            <path fill={primaryColorMid} className="reacticon__table_row-6" d="M23,27H7c-0.6,0-1-0.4-1-1v-1h18v1C24,26.6,23.6,27,23,27z"/>
           </g>
         : null}
         {this.props.type === 'image' ?
