@@ -138,78 +138,27 @@ $progressHatchSize: 1em;
 }
 
 // text
-.reacticon__text_row-1 {
-  animation: scale-in 0.1s ease-in;
-}
-
-.reacticon__text_row-2 {
-  animation: scale-in 0.2s ease-in;
-}
-
-.reacticon__text_row-3 {
-  animation: scale-in 0.3s ease-in;
-}
-
-.reacticon__text_row-4 {
-  animation: scale-in 0.4s ease-in;
+@for $i from 1 through 4 {
+  .reacticon__text_row-#{$i} {
+    $interval: 0.1s;
+    animation: scale-in #{($i * $interval)} ease-in;
+  }
 }
 
 // table
-.reacticon__table_header {
-  animation: drop-in 0.4s ease-in;
-}
-
-.reacticon__table_row-1 {
-  animation: drop-in 0.35s ease-in;
-}
-
-.reacticon__table_row-2 {
-  animation: drop-in 0.3s ease-in;
-}
-
-.reacticon__table_row-3 {
-  animation: drop-in 0.25s ease-in;
-}
-
-.reacticon__table_row-4 {
-  animation: drop-in 0.2s ease-in;
-}
-
-.reacticon__table_row-5 {
-  animation: drop-in 0.15s ease-in;
-}
-
-.reacticon__table_row-6 {
-  animation: drop-in 0.1s ease-in;
+@for $i from 1 through 7 {
+  .reacticon__table_row-#{$i} {
+    $interval: 0.05s;
+    animation: drop-in #{($i * $interval + $interval)} ease-in;
+  }
 }
 
 // code
-.reacticon__code_row-1 {
-  animation: diagonal-slide-in 0.4s ease-in;
-}
-
-.reacticon__code_row-2 {
-  animation: diagonal-slide-in 0.35s ease-in;
-}
-
-.reacticon__code_row-3 {
-  animation: diagonal-slide-in 0.3s ease-in;
-}
-
-.reacticon__code_row-4 {
-  animation: diagonal-slide-in 0.25s ease-in;
-}
-
-.reacticon__code_row-5 {
-  animation: diagonal-slide-in 0.2s ease-in;
-}
-
-.reacticon__code_row-6 {
-  animation: diagonal-slide-in 0.15s ease-in;
-}
-
-.reacticon__code_row-7 {
-  animation: diagonal-slide-in 0.1s ease-in;
+@for $i from 1 through 7 {
+  .reacticon__code_row-#{$i} {
+    $interval: 0.05s;
+    animation: diagonal-slide-in #{($i * $interval + $interval)} ease-in;
+  }
 }
 
 .reacticon__code_sidebar {
