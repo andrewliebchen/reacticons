@@ -92,16 +92,16 @@ var Reacticon = React.createClass({
         {this.props.type === 'text' ?
           <g className="reacticon__type">
             <g>
-              <path fill={this.props.primaryColor} d="M23.5,13h-10c-0.3,0-0.5,0.2-0.5,0.5v1c0,0.3,0.2,0.5,0.5,0.5h10c0.3,0,0.5-0.2,0.5-0.5v-1C24,13.2,23.8,13,23.5,13z"/>
-              <path fill={this.props.primaryColor} d="M23.5,17h-10c-0.3,0-0.5,0.2-0.5,0.5v1c0,0.3,0.2,0.5,0.5,0.5h10c0.3,0,0.5-0.2,0.5-0.5v-1C24,17.2,23.8,17,23.5,17z"/>
-              <path fill={this.props.primaryColor} d="M16.5,25h-10C6.2,25,6,25.2,6,25.5v1C6,26.8,6.2,27,6.5,27h10c0.3,0,0.5-0.2,0.5-0.5v-1C17,25.2,16.8,25,16.5,25z"/>
-              <path fill={this.props.primaryColor} d="M23.5,21h-17C6.2,21,6,21.2,6,21.5v1C6,22.8,6.2,23,6.5,23h17c0.3,0,0.5-0.2,0.5-0.5v-1C24,21.2,23.8,21,23.5,21z"/>
+              <path fill={this.props.primaryColor} className="reacticon__text_row-1" d="M23.5,13h-10c-0.3,0-0.5,0.2-0.5,0.5v1c0,0.3,0.2,0.5,0.5,0.5h10c0.3,0,0.5-0.2,0.5-0.5v-1C24,13.2,23.8,13,23.5,13z"/>
+              <path fill={this.props.primaryColor} className="reacticon__text_row-2" d="M23.5,17h-10c-0.3,0-0.5,0.2-0.5,0.5v1c0,0.3,0.2,0.5,0.5,0.5h10c0.3,0,0.5-0.2,0.5-0.5v-1C24,17.2,23.8,17,23.5,17z"/>
+              <path fill={this.props.primaryColor} className="reacticon__text_row-3" d="M16.5,25h-10C6.2,25,6,25.2,6,25.5v1C6,26.8,6.2,27,6.5,27h10c0.3,0,0.5-0.2,0.5-0.5v-1C17,25.2,16.8,25,16.5,25z"/>
+              <path fill={this.props.primaryColor} className="reacticon__text_row-4" d="M23.5,21h-17C6.2,21,6,21.2,6,21.5v1C6,22.8,6.2,23,6.5,23h17c0.3,0,0.5-0.2,0.5-0.5v-1C24,21.2,23.8,21,23.5,21z"/>
             </g>
             <g>
-              <path fill={primaryColorLight} d="M7,19h4c0.6,0,1-0.4,1-1v-4c0-0.6-0.4-1-1-1H7c-0.6,0-1,0.4-1,1v4C6,18.6,6.4,19,7,19z"/>
-              <path fill={primaryColorMid} d="M6.5,18.9l2.2-2.2L8.1,16c-0.1-0.1-0.3-0.2-0.5-0.2c-0.2,0-0.4,0.1-0.5,0.2L6,17.1V18C6,18.4,6.2,18.7,6.5,18.9z"/>
-              <path fill={this.props.primaryColor} d="M11.2,15.4c-0.2-0.2-0.4-0.2-0.6-0.2s-0.4,0.1-0.6,0.2l-3.5,3.5C6.7,18.9,6.8,19,7,19h4c0,0,0,0,0.1,0c0.5,0,0.9-0.5,0.9-1v-1.8L11.2,15.4z"/>
-              <path fill={primaryColorMid} d="M6.5,14.5c0.6,0,1-0.4,1-1c0-0.2-0.1-0.4-0.1-0.5H7c-0.5,0-1,0.4-1,1v0.4C6.1,14.4,6.3,14.5,6.5,14.5z"/>
+              <path fill={primaryColorLight} className="reacticon__image_bg" d="M7,19h4c0.6,0,1-0.4,1-1v-4c0-0.6-0.4-1-1-1H7c-0.6,0-1,0.4-1,1v4C6,18.6,6.4,19,7,19z"/>
+              <path fill={primaryColorMid} className="reacticon__image_rear-mtn" d="M6.5,18.9l2.2-2.2L8.1,16c-0.1-0.1-0.3-0.2-0.5-0.2c-0.2,0-0.4,0.1-0.5,0.2L6,17.1V18C6,18.4,6.2,18.7,6.5,18.9z"/>
+              <path fill={this.props.primaryColor} className="reacticon__image_front-mtn" d="M11.2,15.4c-0.2-0.2-0.4-0.2-0.6-0.2s-0.4,0.1-0.6,0.2l-3.5,3.5C6.7,18.9,6.8,19,7,19h4c0,0,0,0,0.1,0c0.5,0,0.9-0.5,0.9-1v-1.8L11.2,15.4z"/>
+              <path fill={primaryColorMid} className="reacticon__image_sun" d="M6.5,14.5c0.6,0,1-0.4,1-1c0-0.2-0.1-0.4-0.1-0.5H7c-0.5,0-1,0.4-1,1v0.4C6.1,14.4,6.3,14.5,6.5,14.5z"/>
             </g>
           </g>
         : null }
@@ -126,17 +126,17 @@ var Reacticon = React.createClass({
         : null}
         {this.props.type === 'code' ?
           <g className="reacticon__type">
-            <path fill={primaryColorDark} d="M9,26V14v-1H7c-0.6,0-1,0.4-1,1v12c0,0.6,0.4,1,1,1h2V26z"/>
+            <path fill={primaryColorDark} className="reacticon__code_sidebar" d="M9,26V14v-1H7c-0.6,0-1,0.4-1,1v12c0,0.6,0.4,1,1,1h2V26z"/>
             <g>
-              <path fill={primaryColorLight} d="M24,15H9v-2h14c0.6,0,1,0.4,1,1V15z"/>
-              <rect fill={primaryColorMid} x="9" y="15" width="15" height="2"/>
-              <rect fill={primaryColorLight} x="9" y="17" width="15" height="2"/>
-              <rect fill={primaryColorMid} x="9" y="19" width="15" height="2"/>
-              <rect fill={primaryColorLight} x="9" y="21" width="15" height="2"/>
-              <rect fill={primaryColorMid} x="9" y="23" width="15" height="2"/>
-              <path fill={primaryColorLight} d="M23,27H9v-2h15v1C24,26.6,23.6,27,23,27z"/>
+              <path fill={primaryColorLight} className="reacticon__code_row-1" d="M24,15H9v-2h14c0.6,0,1,0.4,1,1V15z"/>
+              <rect fill={primaryColorMid} className="reacticon__code_row-2" x="9" y="15" width="15" height="2"/>
+              <rect fill={primaryColorLight} className="reacticon__code_row-3" x="9" y="17" width="15" height="2"/>
+              <rect fill={primaryColorMid} className="reacticon__code_row-4" x="9" y="19" width="15" height="2"/>
+              <rect fill={primaryColorLight} className="reacticon__code_row-5" x="9" y="21" width="15" height="2"/>
+              <rect fill={primaryColorMid} className="reacticon__code_row-6" x="9" y="23" width="15" height="2"/>
+              <path fill={primaryColorLight} className="reacticon__code_row-7" d="M23,27H9v-2h15v1C24,26.6,23.6,27,23,27z"/>
             </g>
-            <g>
+            <g className="reacticon__code_numbers">
               <path fill={this.props.bgColor} d="M8.1,15.9v0.3H7v-0.3h0.4V15H7v-0.2c0.2,0,0.3-0.1,0.4-0.1h0.3v1.3H8.1z"/>
               <path fill={this.props.bgColor} d="M6.9,19c0.5-0.4,0.8-0.7,0.8-0.9c0-0.2-0.1-0.2-0.3-0.2c-0.1,0-0.2,0.1-0.3,0.2l-0.2-0.2c0.2-0.2,0.3-0.3,0.6-0.3c0.3,0,0.6,0.2,0.6,0.5c0,0.3-0.3,0.6-0.6,0.8c0.1,0,0.2,0,0.3,0h0.4v0.3H6.9V19z"/>
               <path fill={this.props.bgColor} d="M7,21.8C7.1,21.9,7.3,22,7.4,22c0.2,0,0.3-0.1,0.3-0.2c0-0.1-0.1-0.2-0.5-0.2v-0.3c0.3,0,0.4-0.1,0.4-0.2c0-0.1-0.1-0.2-0.2-0.2c-0.1,0-0.2,0.1-0.3,0.1l-0.2-0.2c0.2-0.1,0.3-0.2,0.5-0.2c0.3,0,0.6,0.2,0.6,0.4c0,0.2-0.1,0.3-0.3,0.4v0c0.2,0.1,0.4,0.2,0.4,0.4c0,0.3-0.3,0.5-0.6,0.5c-0.3,0-0.5-0.1-0.6-0.2L7,21.8z"/>
