@@ -118,12 +118,10 @@ var Reacticon = React.createClass({
         : null}
         {this.props.type === 'image' ?
           <g className="reacticon__type">
-            <path fill={primaryColorLight} d="M23,13H7c-0.6,0-1,0.4-1,1v12c0,0.6,0.4,1,1,1h16c0.6,0,1-0.4,1-1V14C24,13.4,23.6,13,23,13L23,13z"/>
-            <g className="reacticon__image">
-              <path fill={primaryColorDark} d="M7.1,27l15.3,0l-7.5-7.5c-0.3-0.3-0.8-0.5-1.2-0.5c-0.4,0-0.9,0.2-1.2,0.5L6,25.9V26C6,26.6,6.5,27,7.1,27z"/>
-              <path fill={this.props.primaryColor} d="M24,19l-1.1-1c-0.4-0.4-1-0.6-1.5-0.6c-0.5,0-1.1,0.2-1.5,0.6l-9.1,9H23c0.6,0,1-0.4,1-1V19z"/>
-              <path fill={primaryColorMid} d="M7,13c-0.6,0-1,0.4-1,1v2.2c0.3,0.2,0.7,0.3,1.2,0.3c1.3,0,2.3-1,2.3-2.3c0-0.4-0.1-0.8-0.3-1.2H7z"/>
-            </g>
+            <path fill={primaryColorLight} className="reacticon__image_bg" d="M23,13H7c-0.6,0-1,0.4-1,1v12c0,0.6,0.4,1,1,1h16c0.6,0,1-0.4,1-1V14C24,13.4,23.6,13,23,13L23,13z"/>
+            <path fill={primaryColorDark} className="reacticon__image_rear-mtn" d="M7.1,27l15.3,0l-7.5-7.5c-0.3-0.3-0.8-0.5-1.2-0.5c-0.4,0-0.9,0.2-1.2,0.5L6,25.9V26C6,26.6,6.5,27,7.1,27z"/>
+            <path fill={this.props.primaryColor} className="reacticon__image_front-mtn" d="M24,19l-1.1-1c-0.4-0.4-1-0.6-1.5-0.6c-0.5,0-1.1,0.2-1.5,0.6l-9.1,9H23c0.6,0,1-0.4,1-1V19z"/>
+            <path fill={primaryColorMid} className="reacticon__image_sun" d="M7,13c-0.6,0-1,0.4-1,1v2.2c0.3,0.2,0.7,0.3,1.2,0.3c1.3,0,2.3-1,2.3-2.3c0-0.4-0.1-0.8-0.3-1.2H7z"/>
           </g>
         : null}
         {this.props.type === 'code' ?
@@ -148,10 +146,10 @@ var Reacticon = React.createClass({
         : null}
         {this.props.type === 'slides' ?
           <g className="reacticon__type">
-            <path fill={primaryColorDark} d="M23,13H7c-0.6,0-1,0.4-1,1v12c0,0.6,0.4,1,1,1h16c0.6,0,1-0.4,1-1V14C24,13.4,23.6,13,23,13L23,13z"/>
+            <path fill={primaryColorDark} className="reacticon__slides_bg" d="M23,13H7c-0.6,0-1,0.4-1,1v12c0,0.6,0.4,1,1,1h16c0.6,0,1-0.4,1-1V14C24,13.4,23.6,13,23,13L23,13z"/>
             <g>
-              <path fill={primaryColorMid} d="M14.9,16.1c-2.5,0-4.4,2-4.4,4.4c0,2.5,2,4.4,4.4,4.4s4.4-2,4.4-4.4h-4.4V16.1z"/>
-              <path fill={primaryColorLight} d="M16.1,15v4.4h4.4C20.5,17,18.5,15,16.1,15z"/>
+              <path fill={primaryColorMid} className="reacticon__slides_pie" d="M14.9,16.1c-2.5,0-4.4,2-4.4,4.4c0,2.5,2,4.4,4.4,4.4s4.4-2,4.4-4.4h-4.4V16.1z"/>
+              <path fill={primaryColorLight} className="reacticon__slides_slice"d="M16.1,15v4.4h4.4C20.5,17,18.5,15,16.1,15z"/>
             </g>
           </g>
         : null}
