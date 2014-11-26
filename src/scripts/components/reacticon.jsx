@@ -16,7 +16,7 @@ var Reacticon = React.createClass({
     label:        React.PropTypes.string,
     bgColor:      React.PropTypes.string,
     primaryColor: React.PropTypes.string,
-    animateFlap:  React.PropTypes.bool,
+    animate:      React.PropTypes.bool,
     progress:     React.PropTypes.string,
     isProcessing: React.PropTypes.bool
   },
@@ -45,8 +45,7 @@ var Reacticon = React.createClass({
     // ClassNames
     var reacticonClassName = cx({
       "reacticon": true,
-      "animate-flap": this.props.animateFlap,
-      "animate-type": this.props.animateType
+      "is-animated":  this.props.animate
     });
     reacticonClassName += " reacticon_" + this.props.type;
     var progressClassName  = cx({
@@ -86,7 +85,7 @@ var Reacticon = React.createClass({
             <path fill={this.props.bgColor} d="M28,40H2c-1.1,0-2-0.9-2-2V2c0-1.1,0.9-2,2-2h18l10,10v28C30,39.1,29.1,40,28,40z"/>
           </g>
           <g className="reacticon__file__flap">
-            <path fill={bgColorDark} d={this.props.animateFlap ? "M20,0l8,0c1.1,0,2,0.9,2,2v8L20,0z" : "M30,10h-8c-1.1,0-2-0.9-2-2V0L30,10z" }/>
+            <path fill={bgColorDark} d="M30,10h-8c-1.1,0-2-0.9-2-2V0L30,10z"/>
           </g>
         </g>
         {this.props.type === 'text' ?

@@ -33,38 +33,34 @@ var ReacticonsApp = React.createClass({
             height="100"
             type="text"
             label="doc"
-            progress="50%" />
+            progress="50%"
+            animate />
           <Reacticon
             key="2"
             height="100"
             type="table"
             primaryColor="#2ECC40"
-            isProcessing />
+            isProcessing
+            animate />
           <Reacticon
             key="3"
             height="100"
             type="image"
-            label="png" />
+            label="png"
+            animate />
           <Reacticon
             key="4"
             height="100"
             type="code"
-            label="html" />
+            label="html"
+            animate />
           <Reacticon
             key="5"
             height="100"
             type="slides"
             label="ppt"
-            primaryColor="#FF4136" />
-          { this.state.showAnimateFlap ?
-            <Reacticon
-              key="6"
-              height="100"
-              type="slides"
-              label="ppt"
-              primaryColor="#FF4136"
-              animateFlap />
-          : null}
+            primaryColor="#FF4136"
+            animate />
         </CSSTransitionGroup>
         <div>
           <button onClick={this.onClick}>Animate corner flap</button>

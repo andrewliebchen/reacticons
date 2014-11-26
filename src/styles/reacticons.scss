@@ -24,6 +24,17 @@ $progressHatchSize: 1em;
   }
 }
 
+@keyframes scale-out {
+  0% {
+    opacity: 0;
+    transform: scale(1.3)
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes rotate-in {
   0% {
     opacity: 0;
@@ -63,18 +74,6 @@ $progressHatchSize: 1em;
 .reacticon {
   position: relative;
   display: inline-block;
-}
-
-.reacticon__file {
-
-}
-
-.reacticon__file__background {
-
-}
-
-.reacticon__file__flap {
-
 }
 
 .reacticon__type {
@@ -123,83 +122,92 @@ $progressHatchSize: 1em;
 }
 
 // Animations
-.reacticon-enter {
-  &.animate-flap .reacticon__file__flap {
-    transform: rotate3d(0, 0, 0, 180deg);
-    transition: all 0.8s ease-out;
-    transform-origin: 100% 100%;
+// animate flap
+// .reacticon-enter {
+//   &.animate-flap .reacticon__file__flap {
+//     transform: rotate3d(0, 0, 0, 180deg);
+//     transition: all 0.8s ease-out;
+//     transform-origin: 100% 100%;
+//   }
+// }
+
+// .reacticon-enter.reacticon-enter-active {
+//   &.animate-flap .reacticon__file__flap {
+//     transform: rotate3d(1, 1, 0, 180deg);
+//   }
+// }
+
+.is-animated {
+  // type label
+  .reacticon__label {
+    opacity: 0;
+    animation: scale-out 0.2s ease-in 0.3s forwards;
   }
-}
 
-.reacticon-enter.reacticon-enter-active {
-  &.animate-flap .reacticon__file__flap {
-    transform: rotate3d(1, 1, 0, 180deg);
+  // text
+  @for $i from 1 through 4 {
+    .reacticon__text_row-#{$i} {
+      $interval: 0.1s;
+      animation: scale-in #{($i * $interval)} ease-in;
+    }
   }
-}
 
-// text
-@for $i from 1 through 4 {
-  .reacticon__text_row-#{$i} {
-    $interval: 0.1s;
-    animation: scale-in #{($i * $interval)} ease-in;
+  // table
+  @for $i from 1 through 7 {
+    .reacticon__table_row-#{$i} {
+      $interval: 0.05s;
+      animation: drop-in #{($i * $interval + $interval)} ease-in;
+    }
   }
-}
 
-// table
-@for $i from 1 through 7 {
-  .reacticon__table_row-#{$i} {
-    $interval: 0.05s;
-    animation: drop-in #{($i * $interval + $interval)} ease-in;
+  // code
+  @for $i from 1 through 7 {
+    .reacticon__code_row-#{$i} {
+      $interval: 0.05s;
+      animation: diagonal-slide-in #{($i * $interval + $interval)} ease-in;
+    }
   }
-}
 
-// code
-@for $i from 1 through 7 {
-  .reacticon__code_row-#{$i} {
-    $interval: 0.05s;
-    animation: diagonal-slide-in #{($i * $interval + $interval)} ease-in;
+  .reacticon__code_sidebar {
+    animation: scale-in 0.2s ease-in;
+    transform-origin: 50%;
   }
-}
 
-.reacticon__code_sidebar {
-  animation: scale-in 0.2s ease-in;
-  transform-origin: 50%;
-}
-
-.reacticon__code_numbers {
-  animation: scale-in 0.4s ease-in;
-  transform-origin: 50%;
-}
+  .reacticon__code_numbers {
+    animation: scale-in 0.4s ease-in;
+    transform-origin: 50%;
+  }
 
 
-// image
-.reacticon__image_bg {
-  animation: scale-in 0.1s ease-in;
-}
+  // image
+  .reacticon__image_bg {
+    animation: scale-in 0.1s ease-in;
+  }
 
-.reacticon__image_front-mtn {
-  animation: scale-in 0.3s ease-in;
-}
+  .reacticon__image_front-mtn {
+    animation: scale-in 0.3s ease-in;
+  }
 
-.reacticon__image_rear-mtn {
-  animation: scale-in 0.2s ease-in;
-}
+  .reacticon__image_rear-mtn {
+    animation: scale-in 0.2s ease-in;
+  }
 
-.reacticon__image_sun {
-  animation: scale-in 0.4s ease-in;
-}
+  .reacticon__image_sun {
+    animation: scale-in 0.4s ease-in;
+  }
 
-// slides
-.reacticon__slides_bg {
-  animation: scale-in 0.1s ease-in;
-}
+  // slides
+  .reacticon__slides_bg {
+    animation: scale-in 0.1s ease-in;
+  }
 
-.reacticon__slides_pie {
-  animation: rotate-in 0.35s ease-out;
-}
+  .reacticon__slides_pie {
+    animation: rotate-in 0.35s ease-out;
+  }
 
-.reacticon__slides_slice {
-  opacity: 0;
-  animation: diagonal-slide-in 0.2s ease-out 0.2s forwards;
+  .reacticon__slides_slice {
+    opacity: 0;
+    animation: diagonal-slide-in 0.2s ease-out 0.2s forwards;
+  }
 }
 
