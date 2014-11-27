@@ -124,16 +124,14 @@ var ExampleForm = React.createClass({
           <input type="text" />
         </fieldset>
         <fieldset>
-          <label>Animate</label>
-          <Toggle />
+          <Toggle label="Animation off" />
         </fieldset>
         <fieldset>
           <label>Progress</label>
           <input type="text" />
         </fieldset>
         <fieldset>
-          <label>Processing</label>
-          <Toggle />
+          <Toggle label="Processing off" isOn/>
         </fieldset>
       </div>
     );
@@ -142,9 +140,18 @@ var ExampleForm = React.createClass({
 
 var Toggle = React.createClass({
   render: function() {
+    var cx = React.addons.classSet;
+    var toggleClassName = cx({
+     'toggle': true,
+     'is-on':  this.props.isOn
+    });
+
     return (
-      <div className="toggle">
-        <div className="toggle__handle"/>
+      <div className={toggleClassName}>
+        <div className="toggle__wrapper">
+          <div className="toggle__handle"/>
+        </div>
+        <label className="toggle__label">{this.props.label}</label>
       </div>
     );
   }

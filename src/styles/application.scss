@@ -3,9 +3,9 @@
 // VARIABLES
 $color-gray-light: #f0f0f0;
 $color-gray-mid:   #999;
-$color-gray-dark:  #001F3F;
+$color-gray-dark:  darken(#001F3F, 2%);
 $color-primary:    #00ffc4;
-// $color-primary:    #7FDBFF;
+$color-positive:   darken($color-primary, 5%);
 
 $width-wrapper: 800px;
 $padding-section: 5em;
@@ -61,6 +61,29 @@ a {
 fieldset {
   border: 0;
   padding: 0.5em 1em;
+}
+
+label {
+  font-size: 0.75em;
+  font-weight: bold;
+  display: block;
+}
+
+button {
+
+}
+
+input {
+  appearance: none;
+  border: 2px solid $color-gray-light;
+  border-radius: 5px;
+  padding: 0.25em;
+  line-height: 1;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
 }
 
 // SPECIFIC
@@ -124,6 +147,53 @@ fieldset {
     position: absolute;
     top: 50%;
     transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+.toggle {
+  $toggleSize: 1.25em;
+  position: relative;
+
+  .toggle__wrapper {
+    background-color: $color-gray-dark;
+    border-radius: $toggleSize;
+    border: 1px solid $color-gray-dark;
+    box-sizing: content-box;
+    cursor: pointer;
+    float: left;
+    height: $toggleSize;
+    margin-right: 0.5em;
+    width: $toggleSize * 2;
+
+    &:hover {
+      box-shadow: 0 0 0 2px $color-primary;
+    }
+  }
+
+  .toggle__handle {
+    background-color: white;
+    border-radius: $toggleSize;
+    height: $toggleSize;
+    left: 1px;
+    position: absolute;
+    top: 1px;
+    transition: all 0.1s ease-out;
+    width: $toggleSize;
+  }
+
+  .toggle__label {
+    line-height: 1.75em;
+  }
+
+  &.is-on {
+    .toggle__wrapper {
+      background-color: $color-positive;
+      border-color: $color-positive;
+    }
+
+    .toggle__handle {
+      left: $toggleSize + (1/16);
+    }
   }
 }
 
