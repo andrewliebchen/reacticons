@@ -122,21 +122,6 @@ $progressHatchSize: 1em;
 }
 
 // Animations
-// animate flap
-// .reacticon-enter {
-//   &.animate-flap .reacticon__file__flap {
-//     transform: rotate3d(0, 0, 0, 180deg);
-//     transition: all 0.8s ease-out;
-//     transform-origin: 100% 100%;
-//   }
-// }
-
-// .reacticon-enter.reacticon-enter-active {
-//   &.animate-flap .reacticon__file__flap {
-//     transform: rotate3d(1, 1, 0, 180deg);
-//   }
-// }
-
 .is-animated {
   // type label
   .reacticon__label {
