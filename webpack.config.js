@@ -42,11 +42,11 @@ module.exports = {
       test: /\.jsx$/,
       loader: 'react-hot!jsx-loader?harmony'
     }, {
-      test: /\.scss/,
-      loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader?outputStyle=expanded'
-    }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader!autoprefixer-loader'
+    }, {
+      test: /\.scss/,
+      loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded!autoprefixer-loader'
     }, {
       test: /\.(png|jpg)$/,
       loader: 'url-loader?limit=8192'

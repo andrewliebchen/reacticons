@@ -12,7 +12,7 @@ module.exports = {
 
   output: {
     publicPath: '/assets/',
-    path: 'dist/assets/',
+    path: 'assets/',
     filename: 'main.js'
   },
 
@@ -48,10 +48,10 @@ module.exports = {
       loader: 'jsx-loader?harmony'
     }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader!autoprefixer-loader'
+      loader: 'style-loader!css-loader'
     }, {
       test: /\.scss/,
-      loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded!autoprefixer-loader'
+      loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
     }, {
       test: /\.(png|jpg)$/,
       loader: 'url-loader?limit=8192'

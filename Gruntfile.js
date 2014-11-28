@@ -82,15 +82,9 @@ module.exports = function (grunt) {
             flatten: true,
             expand: true,
             src: ['<%= pkg.src %>/*'],
-            dest: '<%= pkg.dist %>/',
+            dest: '',
             filter: 'isFile'
-          },
-          {
-            flatten: true,
-            expand: true,
-            src: ['<%= pkg.src %>/images/*'],
-            dest: '<%= pkg.dist %>/images/'
-          },
+          }
         ]
       }
     },
@@ -100,7 +94,8 @@ module.exports = function (grunt) {
         files: [{
           dot: true,
           src: [
-            '<%= pkg.dist %>'
+            'index.html',
+            'assets/'
           ]
         }]
       }
