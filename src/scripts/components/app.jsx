@@ -84,7 +84,7 @@ var Main = React.createClass({
             </div>
             <div className="example__configure">
               <ExampleForm />
-              <ExampleCode />
+              {/*<ExampleCode />*/}
             </div>
           </div>
         </div>
@@ -124,14 +124,16 @@ var ExampleForm = React.createClass({
           <input type="text" />
         </fieldset>
         <fieldset>
-          <Toggle label="Animation off" />
+          <label>Animation</label>
+          <Toggle />
         </fieldset>
         <fieldset>
           <label>Progress</label>
           <input type="text" />
         </fieldset>
         <fieldset>
-          <Toggle label="Processing off" isOn/>
+          <label>Processing</label>
+          <Toggle />
         </fieldset>
       </div>
     );
@@ -139,21 +141,31 @@ var ExampleForm = React.createClass({
 });
 
 var Toggle = React.createClass({
+  getInitialState: function() {
+    return { toggleOn: false };
+  },
+
   render: function() {
     var cx = React.addons.classSet;
     var toggleClassName = cx({
      'toggle': true,
-     'is-on':  this.props.isOn
+     'is-on':  this.state.toggleOn
     });
 
     return (
-      <div className={toggleClassName}>
+      <div className={toggleClassName} onClick={this.handleToggle}>
         <div className="toggle__wrapper">
           <div className="toggle__handle"/>
         </div>
-        <label className="toggle__label">{this.props.label}</label>
+        <span className="toggle__label">
+          {this.state.toggleOn ? "On" : "Off"}
+        </span>
       </div>
     );
+  },
+
+  handleToggle: function () {
+    this.state.toggleOn ? this.setState({ toggleOn: false }) : this.setState({ toggleOn: true });
   }
 });
 
@@ -195,12 +207,6 @@ var Footer = React.createClass({
 });
 
 var ReacticonsApp = React.createClass({
-  // getInitialState: function() {
-  //     return { showAnimateFlap: false };
-  // },
-  // onClick: function() {
-  //     this.setState({ showAnimateFlap: true });
-  // },
   render: function() {
     return (
       <div className="wrapper">

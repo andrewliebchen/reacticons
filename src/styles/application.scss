@@ -5,7 +5,7 @@ $color-gray-light: #f0f0f0;
 $color-gray-mid:   #999;
 $color-gray-dark:  darken(#001F3F, 2%);
 $color-primary:    #00ffc4;
-$color-positive:   darken($color-primary, 5%);
+$color-positive:   $color-primary;
 
 $width-wrapper: 800px;
 $padding-section: 5em;
@@ -67,6 +67,9 @@ label {
   font-size: 0.75em;
   font-weight: bold;
   display: block;
+  float: left;
+  line-height: 2.5;
+  width: 40%;
 }
 
 button {
@@ -79,6 +82,8 @@ input {
   border-radius: 5px;
   padding: 0.25em;
   line-height: 1;
+  float: right;
+  width: 60%;
 
   &:focus {
     outline: none;
@@ -151,13 +156,14 @@ input {
 }
 
 .toggle {
-  $toggleSize: 1.25em;
-  position: relative;
+  $toggleSize: 1em;
+  margin-top: 0.25em;
 
   .toggle__wrapper {
+    position: relative;
     background-color: $color-gray-dark;
     border-radius: $toggleSize;
-    border: 1px solid $color-gray-dark;
+    border: 2px solid $color-gray-dark;
     box-sizing: content-box;
     cursor: pointer;
     float: left;
@@ -166,7 +172,7 @@ input {
     width: $toggleSize * 2;
 
     &:hover {
-      box-shadow: 0 0 0 2px $color-primary;
+      box-shadow: 0 0 0 2px $color-positive;
     }
   }
 
@@ -174,15 +180,18 @@ input {
     background-color: white;
     border-radius: $toggleSize;
     height: $toggleSize;
-    left: 1px;
+    left: 0;
     position: absolute;
-    top: 1px;
+    top: 0;
     transition: all 0.1s ease-out;
     width: $toggleSize;
   }
 
   .toggle__label {
-    line-height: 1.75em;
+    position: relative;
+    top: -2px;
+    font-size: 0.75em;
+    font-weight: bold;
   }
 
   &.is-on {
@@ -192,7 +201,7 @@ input {
     }
 
     .toggle__handle {
-      left: $toggleSize + (1/16);
+      left: $toggleSize;
     }
   }
 }
