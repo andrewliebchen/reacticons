@@ -4,11 +4,13 @@
 $color-gray-light: #f0f0f0;
 $color-gray-mid:   #999;
 $color-gray-dark:  darken(#001F3F, 2%);
-$color-primary:    #00ffc4;
-$color-positive:   $color-primary;
+$color-primary:    #0074D9;
+$color-positive:   #00ffc4;
 
-$width-wrapper: 800px;
+$width-wrapper:   800px;
 $padding-section: 5em;
+
+$radius:  5px;
 
 // HELPERS
 @mixin clearfix {
@@ -54,7 +56,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    text-transform: underline;
+    text-decoration: underline;
   }
 }
 
@@ -73,13 +75,30 @@ label {
 }
 
 button {
+  appearance: none;
+  border-radius: $radius;
+  background-image: none;
+  border: 0;
+  padding: 0 1em;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  background-color: transparent;
 
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px $color-primary;
+  }
 }
 
 input {
   appearance: none;
   border: 2px solid $color-gray-light;
-  border-radius: 5px;
+  border-radius: $radius;
   padding: 0.25em;
   line-height: 1;
   float: right;
@@ -89,6 +108,10 @@ input {
     outline: none;
     border-color: $color-primary;
   }
+}
+
+select {
+  margin: 0.4em 0 0;
 }
 
 // SPECIFIC
@@ -135,7 +158,7 @@ input {
 .example {
   @include clearfix;
   background-color: $color-gray-dark;
-  border-radius: 5px;
+  border-radius: $radius;
   overflow: hidden;
   position: relative;
 }
@@ -217,5 +240,38 @@ input {
 .instructions {
   @extend %section;
   background-color: white;
+  color: $color-gray-dark;
+
+  .width-wrapper {
+    max-width: $width-wrapper / 1.5;
+  }
+}
+
+.instructions__cta {
+  line-height: 3em;
+  width: 100%;
+  background-color: $color-primary;
+  color: white;
+
+  &:hover {
+    background-color: darken($color-primary, 5%);
+  }
+}
+
+.instructions__or {
+  display: block;
+  padding: 1em 0;
+  text-align: center;
+}
+
+.instructions__code {
+  display: block;
+  padding: 0 0.5em;
+  color: $color-gray-mid;
+  background-color: $color-gray-light;
+  border-radius: $radius;
+  line-height: 3em;
+  text-align: center;
+  margin-bottom: 3em;
 }
 
