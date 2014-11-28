@@ -120,19 +120,26 @@ var Main = React.createClass({
             <div className="example__result">
               {this.state.code ?
                 <code>
-                  <pre>{'<Reacticon'}</pre>
+                  <span>{'<Reacticon'}</span>
+                  <span>{' height="' + this.state.height + '"'}</span>
+                  <span>{' type="' + this.state.type + '"'}</span>
+                  <span>{' label="' + this.state.label + '"'}</span>
                   {(this.state.bgColor !== defaultBgColor) ?
-                    <pre>{'  bgColor="' + this.state.bgColor + '"'}</pre>
+                    <span>{' bgColor="' + this.state.bgColor + '"'}</span>
                   : null}
                   {(this.state.primaryColor !== defaultPrimaryColor) ?
-                    <pre>{'  primaryColor="' + this.state.primaryColor + '"'}</pre>
+                    <span>{' primaryColor="' + this.state.primaryColor + '"'}</span>
                   : null}
-                  {this.state.animation ? <pre>{'  animation'}</pre> : null}
-                  {this.state.progress ? <pre>{'  progress="50%"'}</pre> : null}
-                  {this.state.processing ? <pre>{'  isProcessing'}</pre> : null}
-                  <pre>{'  height="' + this.state.height + '"'}</pre>
-                  <pre>{'  type="' + this.state.type + '"'}</pre>
-                  <pre>{'  label="' + this.state.label + '" />'}</pre>
+                  {this.state.animation ?
+                    <span>{' animation'}</span>
+                  : null}
+                  {this.state.progress ?
+                    <span>{' progress="50%"'}</span>
+                  : null}
+                  {this.state.processing ?
+                    <span>{' isProcessing'}</span>
+                  : null}
+                  <span>{' />'}</span>
                 </code>
               :
                 <Reacticon
