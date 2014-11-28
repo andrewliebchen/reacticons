@@ -69,8 +69,11 @@ var Hero = React.createClass({
 });
 
 var Main = React.createClass({
+  mixins: [React.addons.LinkedStateMixin],
+
   getInitialState: function() {
     return {
+      code:         false,
       height:       "100",
       type:         "text",
       label:        "doc",
@@ -82,24 +85,16 @@ var Main = React.createClass({
      };
   },
 
+  handleCodeToggle: function(event) {
+    this.setState({code: !this.state.code});
+  },
+
   handleSizeChange: function(event) {
     this.setState({height: event.target.value});
   },
 
   handleTypeChange: function(event) {
     this.setState({type: event.target.value});
-  },
-
-  handleLabelChange: function(event) {
-    this.setState({label: event.target.value});
-  },
-
-  handleBgColorChange: function(event) {
-    this.setState({bgColor: event.target.value});
-  },
-
-  handlePrimaryColorChange: function(event) {
-    this.setState({primaryColor: event.target.value});
   },
 
   handleProcessingToggle: function() {
@@ -120,15 +115,24 @@ var Main = React.createClass({
         <div className="width-wrapper">
           <div className="example">
             <div className="example__result">
-              <Reacticon
-                height={this.state.height}
-                type={this.state.type}
-                label={this.state.label}
-                bgColor={this.state.bgColor}
-                primaryColor={this.state.primaryColor}
-                animate={this.state.animation ? true : null }
-                progress={this.state.progress ? '50%' : null }
-                isProcessing={this.state.processing ? true : null } />
+              {this.state.code ?
+                <code>
+                  <pre dangerouslySetInnerHTML={{__html: '<Reacticon key="1" height="100" type="text" label="doc" progress="50%" />'}} />
+                </code>
+              :
+                <Reacticon
+                  height={this.state.height}
+                  type={this.state.type}
+                  label={this.state.label}
+                  bgColor={this.state.bgColor}
+                  primaryColor={this.state.primaryColor}
+                  animate={this.state.animation ? true : null }
+                  progress={this.state.progress ? '50%' : null }
+                  isProcessing={this.state.processing ? true : null } />
+              }
+              <button className="example__code__toggle" onClick={this.handleCodeToggle}>
+                {this.state.code ? 'Show example' : 'Show code'}
+              </button>
             </div>
             <div className="example__configure">
               <fieldset>
@@ -151,21 +155,15 @@ var Main = React.createClass({
               </fieldset>
               <fieldset>
                 <label>Label</label>
-                <input type="text"
-                  defaultValue={this.state.label}
-                  onChange={this.handleLabelChange} />
+                <input type="text" valueLink={this.linkState('label')} />
               </fieldset>
               <fieldset>
                 <label>Background color</label>
-                <input type="text"
-                  defaultValue={this.state.bgColor}
-                  onChange={this.handleBgColorChange}/>
+                <input type="text" valueLink={this.linkState('bgColor')}/>
               </fieldset>
               <fieldset>
                 <label>Primary color</label>
-                <input type="text"
-                  defaultValue={this.state.primaryColor}
-                  onChange={this.handlePrimaryColorChange} />
+                <input type="text" valueLink={this.linkState('primaryColor')} />
               </fieldset>
               <fieldset>
                 <label>Animation</label>
@@ -179,7 +177,6 @@ var Main = React.createClass({
                 <label>Processing</label>
                 <Toggle toggleOn={this.state.processing} handleToggle={this.handleProcessingToggle} />
               </fieldset>
-              {/*<ExampleCode />*/}
             </div>
           </div>
         </div>
@@ -209,16 +206,6 @@ var Toggle = React.createClass({
   }
 });
 
-var ExampleCode = React.createClass({
-  render: function() {
-    return (
-      <code>
-        <pre dangerouslySetInnerHTML={{__html: '<Reacticon key="1" height="100" type="text" label="doc" progress="50%" />'}} />
-      </code>
-    );
-  }
-});
-
 var Instructions = React.createClass({
   render: function() {
     return (
@@ -239,7 +226,8 @@ var Footer = React.createClass({
     return (
       <footer className="footer">
         <div className="width-wrapper">
-          <p><strong>Reacticons</strong> are under an MIT License. Built in California by Andrew Liebchen.</p>
+          <small>
+            <strong><a href="http://github.com/andrewliebchen/reacticons">Reacticons</a></strong> are under an MIT License, and brought to you by <a href="http://andrewliebchen.com">me</a>.</small>
         </div>
       </footer>
     );
