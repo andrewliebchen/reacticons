@@ -1,14 +1,29 @@
 {
   "name": "reacticons",
-  "version": "0.0.0",
-  "description": "",
-  "repository": "",
-  "private": true,
-  "src": "src",
-  "test": "test",
-  "dist": "dist",
-  "mainInput": "ReacticonsApp",
-  "mainOutput": "main",
+  "version": "0.0.1",
+  "description": "Scalable file icons for ReactJS",
+  "repository": {
+      "type": "git",
+      "url": "git://github.com/andrewliebchen/reacticons"
+    },
+    "keywords": [
+      "js",
+      "react",
+      "reactjs",
+      "svg",
+      "icons",
+      "sass",
+      "css",
+      "webpack",
+      "grunt"
+    ],
+    "contributors": [
+      "Andrew Liebchen"
+    ],
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/andrewliebchen/reacticons/issues"
+    },
   "dependencies": {
     "react": "~0.11.2"
   },
