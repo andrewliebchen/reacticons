@@ -9,6 +9,9 @@ var CSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var Reacticon = require('./reacticon');
 
+var defaultBgColor =       '#ffffff';
+var defaultPrimaryColor = '#0074d9';
+
 // Export React so the devtools can find it
 (window !== window.top ? window.top : window).React = React;
 
@@ -77,8 +80,8 @@ var Main = React.createClass({
       height:       "100",
       type:         "text",
       label:        "doc",
-      bgColor:      "#ffffff",
-      primaryColor: "#0074d9",
+      bgColor:      defaultBgColor,
+      primaryColor: defaultPrimaryColor,
       progress:     false,
       animation:    false,
       processing:   false
@@ -117,7 +120,19 @@ var Main = React.createClass({
             <div className="example__result">
               {this.state.code ?
                 <code>
-                  <pre dangerouslySetInnerHTML={{__html: '<Reacticon key="1" height="100" type="text" label="doc" progress="50%" />'}} />
+                  <pre>{'<Reacticon'}</pre>
+                  {(this.state.bgColor !== defaultBgColor) ?
+                    <pre>{'  bgColor="' + this.state.bgColor + '"'}</pre>
+                  : null}
+                  {(this.state.primaryColor !== defaultPrimaryColor) ?
+                    <pre>{'  primaryColor="' + this.state.primaryColor + '"'}</pre>
+                  : null}
+                  {this.state.animation ? <pre>{'  animation'}</pre> : null}
+                  {this.state.progress ? <pre>{'  progress="50%"'}</pre> : null}
+                  {this.state.processing ? <pre>{'  isProcessing'}</pre> : null}
+                  <pre>{'  height="' + this.state.height + '"'}</pre>
+                  <pre>{'  type="' + this.state.type + '"'}</pre>
+                  <pre>{'  label="' + this.state.label + '" />'}</pre>
                 </code>
               :
                 <Reacticon

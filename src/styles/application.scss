@@ -45,7 +45,8 @@ body {
 
 h1,
 h2,
-p {
+p,
+pre {
   margin: 0;
   padding: 0;
 }
@@ -169,17 +170,23 @@ select {
   border-radius: $radius 0 0 $radius;
   border-right: 1px solid $color-gray-dark;
   bottom: 0;
+  color: $color-gray-light;
   left: 0;
   overflow: hidden;
   position: absolute;
   top: 0;
   width: 50%;
+  padding: 3em;
 
   .reacticon {
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate3d(-50%, -50%, 0);
+  }
+
+  pre {
+    overflow: hidden;
   }
 }
 
