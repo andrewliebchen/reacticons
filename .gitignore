@@ -32,3 +32,4 @@ node_modules/
 dist
 /src/scripts/main.js
 .yo-rc.json
+.sass-cache
