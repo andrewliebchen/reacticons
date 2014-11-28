@@ -169,6 +169,9 @@ select {
   position: absolute;
   top: 0;
   width: 50%;
+  overflow: hidden;
+  border-radius: $radius 0 0 $radius;
+  border-right: 1px solid $color-gray-dark;
 
   .reacticon {
     left: 50%;

@@ -71,17 +71,47 @@ var Hero = React.createClass({
 var Main = React.createClass({
   getInitialState: function() {
     return {
-      animationOn:  false,
-      processingOn: false
+      height:       "100",
+      type:         "text",
+      label:        "doc",
+      bgColor:      "#ffffff",
+      primaryColor: "#0074d9",
+      progress:     false,
+      animation:    false,
+      processing:   false
      };
   },
 
+  handleSizeChange: function(event) {
+    this.setState({height: event.target.value});
+  },
+
+  handleTypeChange: function(event) {
+    this.setState({type: event.target.value});
+  },
+
+  handleLabelChange: function(event) {
+    this.setState({label: event.target.value});
+  },
+
+  handleBgColorChange: function(event) {
+    this.setState({bgColor: event.target.value});
+  },
+
+  handlePrimaryColorChange: function(event) {
+    this.setState({primaryColor: event.target.value});
+  },
+
   handleProcessingToggle: function() {
-    this.setState({processingOn: !this.state.processingOn});
+    this.setState({processing: !this.state.processing});
+  },
+
+  handleProgressToggle: function() {
+    this.setState({progress: !this.state.progress});
   },
 
   handleAnimationToggle: function() {
-    this.setState({animationOn: !this.state.animationOn});
+    this.setState({animation: !this.state.animation});
   },
 
   render: function() {
@@ -91,22 +121,27 @@ var Main = React.createClass({
           <div className="example">
             <div className="example__result">
               <Reacticon
-                key="1"
-                height="100"
-                type="text"
-                label="doc"
-                progress="50%"
-                animate={this.state.animationOn ? true : null }
-                isProcessing={this.state.processingOn ? true : null } />
+                height={this.state.height}
+                type={this.state.type}
+                label={this.state.label}
+                bgColor={this.state.bgColor}
+                primaryColor={this.state.primaryColor}
+                animate={this.state.animation ? true : null }
+                progress={this.state.progress ? '50%' : null }
+                isProcessing={this.state.processing ? true : null } />
             </div>
             <div className="example__configure">
               <fieldset>
                 <label>Size</label>
-                <input type="range" />
+                <input type="range"
+                  defaultValue={this.state.height}
+                  min="0"
+                  max="1000"
+                  onChange={this.handleSizeChange} />
               </fieldset>
               <fieldset>
                 <label>Type</label>
-                <select>
+                <select value="text" onChange={this.handleTypeChange}>
                   <option value="text" selected>Text</option>
                   <option value="table">Table</option>
                   <option value="image">Image</option>
@@ -116,27 +151,33 @@ var Main = React.createClass({
               </fieldset>
               <fieldset>
                 <label>Label</label>
-                <input type="text" />
+                <input type="text"
+                  defaultValue={this.state.label}
+                  onChange={this.handleLabelChange} />
               </fieldset>
               <fieldset>
                 <label>Background color</label>
-                <input type="text" />
+                <input type="text"
+                  defaultValue={this.state.bgColor}
+                  onChange={this.handleBgColorChange}/>
               </fieldset>
               <fieldset>
                 <label>Primary color</label>
-                <input type="text" />
+                <input type="text"
+                  defaultValue={this.state.primaryColor}
+                  onChange={this.handlePrimaryColorChange} />
               </fieldset>
               <fieldset>
                 <label>Animation</label>
-                <Toggle toggleOn={this.state.animationOn} handleToggle={this.handleAnimationToggle} />
+                <Toggle toggleOn={this.state.animation} handleToggle={this.handleAnimationToggle} />
               </fieldset>
               <fieldset>
                 <label>Progress</label>
-                <input type="text" />
+                <Toggle toggleOn={this.state.progress} handleToggle={this.handleProgressToggle} />
               </fieldset>
               <fieldset>
                 <label>Processing</label>
-                <Toggle toggleOn={this.state.processingOn} handleToggle={this.handleProcessingToggle} />
+                <Toggle toggleOn={this.state.processing} handleToggle={this.handleProcessingToggle} />
               </fieldset>
               {/*<ExampleCode />*/}
             </div>
