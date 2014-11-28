@@ -1,0 +1,14 @@
+node_modules/
+.tmp
+dist
+.yo-rc.json
+.jshintrc
+
+webpack.config.js
+webpack.dist.config.js
+index.html
+Gruntfile.js
+/src/components/app.jsx
+/src/styles/_normalize.scss
+/src/styles/application.scss
+
