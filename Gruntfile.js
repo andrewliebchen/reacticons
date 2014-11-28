@@ -70,16 +70,8 @@ module.exports = function (grunt) {
 
     copy: {
       dist: {
-        files: [
-          // includes files within path
-          {
-            flatten: true,
-            expand: true,
-            src: ['<%= pkg.src %>/*'],
-            dest: '',
-            filter: 'isFile'
-          }
-        ]
+        src: ['src/index.html'],
+        dest: './index.html'
       }
     },
 
