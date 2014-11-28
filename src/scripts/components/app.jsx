@@ -69,6 +69,21 @@ var Hero = React.createClass({
 });
 
 var Main = React.createClass({
+  getInitialState: function() {
+    return {
+      animationOn:  false,
+      processingOn: false
+     };
+  },
+
+  handleProcessingToggle: function() {
+    this.setState({processingOn: !this.state.processingOn});
+  },
+
+  handleAnimationToggle: function() {
+    this.setState({animationOn: !this.state.animationOn});
+  },
+
   render: function() {
     return (
       <section className="main">
@@ -80,10 +95,49 @@ var Main = React.createClass({
                 height="100"
                 type="text"
                 label="doc"
-                progress="50%" />
+                progress="50%"
+                animate={this.state.animationOn ? true : null }
+                isProcessing={this.state.processingOn ? true : null } />
             </div>
             <div className="example__configure">
-              <ExampleForm />
+              <fieldset>
+                <label>Size</label>
+                <input type="range" />
+              </fieldset>
+              <fieldset>
+                <label>Type</label>
+                <select>
+                  <option value="text" selected>Text</option>
+                  <option value="table">Table</option>
+                  <option value="image">Image</option>
+                  <option value="code">Code</option>
+                  <option value="slides">Slides</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <label>Label</label>
+                <input type="text" />
+              </fieldset>
+              <fieldset>
+                <label>Background color</label>
+                <input type="text" />
+              </fieldset>
+              <fieldset>
+                <label>Primary color</label>
+                <input type="text" />
+              </fieldset>
+              <fieldset>
+                <label>Animation</label>
+                <Toggle toggleOn={this.state.animationOn} handleToggle={this.handleAnimationToggle} />
+              </fieldset>
+              <fieldset>
+                <label>Progress</label>
+                <input type="text" />
+              </fieldset>
+              <fieldset>
+                <label>Processing</label>
+                <Toggle toggleOn={this.state.processingOn} handleToggle={this.handleProcessingToggle} />
+              </fieldset>
               {/*<ExampleCode />*/}
             </div>
           </div>
@@ -93,79 +147,24 @@ var Main = React.createClass({
   }
 });
 
-var ExampleForm = React.createClass({
-  render: function() {
-    return (
-      <div className="example__form">
-        <fieldset>
-          <label>Size</label>
-          <input type="range" />
-        </fieldset>
-        <fieldset>
-          <label>Type</label>
-          <select>
-            <option value="text" selected>Text</option>
-            <option value="table">Table</option>
-            <option value="image">Image</option>
-            <option value="code">Code</option>
-            <option value="slides">Slides</option>
-          </select>
-        </fieldset>
-        <fieldset>
-          <label>Label</label>
-          <input type="text" />
-        </fieldset>
-        <fieldset>
-          <label>Background color</label>
-          <input type="text" />
-        </fieldset>
-        <fieldset>
-          <label>Primary color</label>
-          <input type="text" />
-        </fieldset>
-        <fieldset>
-          <label>Animation</label>
-          <Toggle />
-        </fieldset>
-        <fieldset>
-          <label>Progress</label>
-          <input type="text" />
-        </fieldset>
-        <fieldset>
-          <label>Processing</label>
-          <Toggle />
-        </fieldset>
-      </div>
-    );
-  }
-});
-
 var Toggle = React.createClass({
-  getInitialState: function() {
-    return { toggleOn: false };
-  },
-
   render: function() {
     var cx = React.addons.classSet;
     var toggleClassName = cx({
      'toggle': true,
-     'is-on':  this.state.toggleOn
+     'is-on':  this.props.toggleOn
     });
 
     return (
-      <div className={toggleClassName} onClick={this.handleToggle}>
+      <div className={toggleClassName} onClick={this.props.handleToggle}>
         <div className="toggle__wrapper">
           <div className="toggle__handle"/>
         </div>
         <span className="toggle__label">
-          {this.state.toggleOn ? "On" : "Off"}
+          {this.props.toggleOn ? "On" : "Off"}
         </span>
       </div>
     );
-  },
-
-  handleToggle: function () {
-    this.state.toggleOn ? this.setState({ toggleOn: false }) : this.setState({ toggleOn: true });
   }
 });
 
