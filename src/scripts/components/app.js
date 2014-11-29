@@ -78,6 +78,7 @@ var Main = React.createClass({
       label:        "doc",
       bgColor:      defaultBgColor,
       primaryColor: defaultPrimaryColor,
+      strokeColor:  null,
       progress:     false,
       animation:    false,
       processing:   false
@@ -126,6 +127,9 @@ var Main = React.createClass({
                   {(this.state.primaryColor !== defaultPrimaryColor) ?
                     <span>{' primaryColor="' + this.state.primaryColor + '"'}</span>
                   : null}
+                  {this.state.strokeColor ?
+                    <span>{' strokeColor="' + this.state.strokeColor + '"'}</span>
+                  : null}
                   {this.state.animation ?
                     <span>{' animation'}</span>
                   : null}
@@ -144,6 +148,7 @@ var Main = React.createClass({
                   label={this.state.label}
                   bgColor={this.state.bgColor}
                   primaryColor={this.state.primaryColor}
+                  strokeColor={this.state.strokeColor}
                   animate={this.state.animation ? true : null }
                   progress={this.state.progress ? '50%' : null }
                   isProcessing={this.state.processing ? true : null } />
@@ -182,6 +187,10 @@ var Main = React.createClass({
               <fieldset>
                 <label>Primary color</label>
                 <input type="text" valueLink={this.linkState('primaryColor')} />
+              </fieldset>
+              <fieldset>
+                <label>Stroke color</label>
+                <input type="text" valueLink={this.linkState('strokeColor')} />
               </fieldset>
               <fieldset>
                 <label>Animation</label>

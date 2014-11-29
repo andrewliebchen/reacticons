@@ -1,6 +1,6 @@
 # What Reacticons?
 
-Reacticons are scalable file icons for ReactJS. They're cute, customizeable, and (can be) animated.
+Reacticons are scalable file icons for ReactJS. They're hip, cute, customizeable, and (can be) animated.
 
 ## Using Reacticons in your project
 
@@ -29,7 +29,7 @@ Type: String
 
 #### `height`
 Type: String
-You should define a `width` or a `height`.
+You'll need to define a `width` or a `height`, otherwise you won't be able to see your lovely new icon!
 
 #### `type`
 Type: String. One of 'text', 'table', 'image', 'code', 'slides'
@@ -41,11 +41,15 @@ This is intended to be the file extension of the file represented by the icon. F
 
 #### `bgColor`
 Type: String
-Default: `#fff`. The color of the file image. The fold-over flap is derived from the main background color.
+Default: `#fff`. Accepts a valid CSS color. Defines the color of the file image. The fold-over flap is derived from the main background color.
 
 #### `primaryColor`
 Type: String
-Default: `#0074d9`. The file type icon is monochromatic. You can define the base color for this icon.
+Default: `#0074d9`. Accepts a valid CSS color. The file type icon is monochromatic. You can define the base color for this icon.
+
+#### `strokeColor`
+Type: String
+Accepts a valid CSS color to draw a 1px border around the icon background.
 
 #### `animate`
 Type: Boolean
@@ -61,10 +65,10 @@ Should the progress bar have a loading indicator style? If `progress` is not def
 
 ## Why is this useful?
 
-Commonly, modern web applicaitons make use of image sprite- or font-based icons. Font-based icons work particularly well becasue they're inheriently vector-based, however there are plenty of limitations. Here are two, for example: icons can be difficult to animate and they're limited to only one color (unless you want to do some multi-icon layout gymnastics).
+Commonly, modern web applications make use of image sprite- or font-based icons. Font-based icons work particularly well becasue they're inheriently vector-based, however there are plenty of limitations. Here are two: icons can be difficult to animate and they're limited to only one color (unless you want to do some multi-icon layout gymnastics).
 
-ReactJS makes it really easy to manage `SVG`s and include configurable `SVG`-based components in your project. Reacticons are `SVG` image components that can be easily included in your projected, colored, scaled, and animated.
+ReactJS makes it really easy to manage `SVG`s and include configurable `SVG`-based components in your project. Reacticons are `SVG` file icons that can be easily included in your project and colored, scaled, progress-bared and animated.
 
 ## Contributing
 
-Admitted, this isn't well tested. Please submit issues for any problems you may encounter. If you'd like to contribute, feel free to open an issue or pull request. Also, I'd love to hear from you if you use Reacticons in your project!
+Reacticons are new to this world and I'm a designer. Please submit issues for any problems you may encounter. If you'd like to contribute, feel free to open an issue or pull request. Also, I'd love to hear from you if you use Reacticons in your project!
