@@ -24,42 +24,42 @@ Boom, now you can use Reacticons where ever you want!
 ### Available `props`
 Reacticons have quite a few `props` that can help you customize the appearance and behavior of the icons.
 
-#### `width`
+##### `width`
 Type: String
 
-#### `height`
+##### `height`
 Type: String
 You'll need to define a `width` or a `height`, otherwise you won't be able to see your lovely new icon!
 
-#### `type`
+##### `type`
 Type: String. One of 'text', 'table', 'image', 'code', 'slides'
 Required. Defines the file type icon within the file icon.
 
-#### `label`
+##### `label`
 Type: String
 This is intended to be the file extension of the file represented by the icon. For example, `doc`, `xlsx`, `html`.
 
-#### `bgColor`
+##### `bgColor`
 Type: String
 Default: `#fff`. Accepts a valid CSS color. Defines the color of the file image. The fold-over flap is derived from the main background color.
 
-#### `primaryColor`
+##### `primaryColor`
 Type: String
 Default: `#0074d9`. Accepts a valid CSS color. The file type icon is monochromatic. You can define the base color for this icon.
 
-#### `strokeColor`
+##### `strokeColor`
 Type: String
 Accepts a valid CSS color to draw a 1px border around the icon background.
 
-#### `animate`
+##### `animate`
 Type: Boolean
 The file type icons can have cute little animations.
 
-#### `progress`
+##### `progress`
 Type: String
 If there is a value for this `prop`, a progress bar will replace the label.
 
-#### `isPorcessing`
+##### `isPorcessing`
 Type: Boolean
 Should the progress bar have a loading indicator style? If `progress` is not defined, the progress bar will be "processing" at 100%.
 
