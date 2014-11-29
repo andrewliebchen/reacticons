@@ -20,7 +20,7 @@ module.exports = {
   devtool: false,
   entry: [
       'webpack/hot/only-dev-server',
-      './src/scripts/components/app.jsx'
+      './src/scripts/components/app.js'
   ],
 
   stats: {
@@ -29,7 +29,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js']
   },
 
   module: {
@@ -39,7 +39,7 @@ module.exports = {
       loader: 'jshint'
     }],
     loaders: [{
-      test: /\.jsx$/,
+      test: /\.js$/,
       loader: 'react-hot!jsx-loader?harmony'
     }, {
       test: /\.css$/,
