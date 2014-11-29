@@ -11,4 +11,7 @@ Gruntfile.js
 /src/components/app.jsx
 /src/styles/_normalize.scss
 /src/styles/application.scss
+/src/scripts/components/app.js
+.sass-cache
+/assets
 
