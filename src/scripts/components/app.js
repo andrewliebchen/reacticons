@@ -229,7 +229,7 @@ var Instructions = React.createClass({
     return (
       <section className="instructions">
         <div className="width-wrapper">
-          <button href="https://github.com/andrewliebchen/reacticons" className="instructions__cta">Download from Github</button>
+          <a href="https://github.com/andrewliebchen/reacticons" className="button instructions__cta">Download from Github</a>
           <div className="instructions__or">or</div>
           <code className="instructions__code">$ npm install reacticons</code>
           <p>Package includes JSX templates, Sass partials, and compiled CSS. Just include it in your project and it should be good to go. Have a problem or idea? Feel free to <a href="https://github.com/andrewliebchen/reacticons/issues">open an issue</a>.</p>
