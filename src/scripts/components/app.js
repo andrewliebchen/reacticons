@@ -85,6 +85,18 @@ var Main = React.createClass({
      };
   },
 
+  handleBgColorChange: function(event) {
+    this.setState({bgColor: event.target.value});
+  },
+
+  handlePrimaryColorChange: function(event) {
+    this.setState({primaryColor: event.target.value});
+  },
+
+  handleStrokeColorChange: function(event) {
+    this.setState({strokeColor: event.target.value});
+  },
+
   handleCodeToggle: function(event) {
     this.setState({code: !this.state.code});
   },
@@ -182,15 +194,21 @@ var Main = React.createClass({
               </fieldset>
               <fieldset>
                 <label>Background color</label>
-                <input type="text" valueLink={this.linkState('bgColor')}/>
+                <input type="text"
+                  defaultValue={this.state.bgColor}
+                  onChange={this.handleBgColorChange} />
               </fieldset>
               <fieldset>
                 <label>Primary color</label>
-                <input type="text" valueLink={this.linkState('primaryColor')} />
+                <input type="text"
+                  defaultValue={this.state.primaryColor}
+                  onChange={this.handlePrimaryColorChange} />
               </fieldset>
               <fieldset>
                 <label>Stroke color</label>
-                <input type="text" valueLink={this.linkState('strokeColor')} />
+                <input type="text"
+                  defaultValue={this.state.strokeColor}
+                  onChange={this.handleStrokeColorChange} />
               </fieldset>
               <fieldset>
                 <label>Animation</label>
