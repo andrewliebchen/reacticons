@@ -181,7 +181,7 @@ var Main = React.createClass({
               <fieldset>
                 <label>Type</label>
                 <select value="text" onChange={this.handleTypeChange}>
-                  <option value="text" selected>Text</option>
+                  <option value="text" defaultValue>Text</option>
                   <option value="table">Table</option>
                   <option value="image">Image</option>
                   <option value="code">Code</option>
@@ -292,6 +292,6 @@ var ReacticonsApp = React.createClass({
   }
 });
 
-React.renderComponent(<ReacticonsApp />, document.getElementById('content')); // jshint ignore:line
+React.render(<ReacticonsApp />, document.getElementById('content')); // jshint ignore:line
 
 module.exports = ReacticonsApp;
