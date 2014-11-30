@@ -1,4 +1,4 @@
-# What Reacticons?
+# What are Reacticons?
 
 Reacticons are scalable file icons for ReactJS. They're hip, cute, customizeable, and (can be) animated.
 
