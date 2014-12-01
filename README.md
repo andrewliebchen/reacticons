@@ -59,7 +59,7 @@ The file type icons can have cute little animations.
 Type: String
 If there is a value for this `prop`, a progress bar will replace the label.
 
-##### `isPorcessing`
+##### `isProcessing`
 Type: Boolean
 Should the progress bar have a loading indicator style? If `progress` is not defined, the progress bar will be "processing" at 100%.
 
