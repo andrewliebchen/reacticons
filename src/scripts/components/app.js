@@ -31,34 +31,29 @@ var Hero = React.createClass({
                 height="100"
                 type="text"
                 label="doc"
-                progress="50%"
-                animate />
+                progress="50%" />
               <Reacticon
                 key="2"
                 height="100"
                 type="table"
                 primaryColor="#2ECC40"
-                isProcessing
-                animate />
+                isProcessing />
               <Reacticon
                 key="3"
                 height="100"
                 type="image"
-                label="png"
-                animate />
+                label="png" />
               <Reacticon
                 key="4"
                 height="100"
                 type="code"
-                label="html"
-                animate />
+                label="html" />
               <Reacticon
                 key="5"
                 height="100"
                 type="slides"
                 label="ppt"
-                primaryColor="#FF4136"
-                animate />
+                primaryColor="#FF4136" />
             </CSSTransitionGroup>
           </div>
         </div>
