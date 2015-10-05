@@ -65,7 +65,7 @@ Should the progress bar have a loading indicator style? If `progress` is not def
 
 ## Why is this useful?
 
-Commonly, modern web applications make use of image sprite- or font-based icons. Font-based icons work particularly well becasue they're inheriently vector-based, however there are plenty of limitations. Here are two: icons can be difficult to animate and they're limited to only one color (unless you want to do some multi-icon layout gymnastics).
+Commonly, modern web applications make use of image sprite- or font-based icons. Font-based icons work particularly well because they're inheriently vector-based, however there are plenty of limitations. Here are two: icons can be difficult to animate and they're limited to only one color (unless you want to do some multi-icon layout gymnastics).
 
 ReactJS makes it really easy to manage `SVG`s and include configurable `SVG`-based components in your project. Reacticons are `SVG` file icons that can be easily included in your project and colored, scaled, progress-bared and animated.
 
